@@ -8,6 +8,8 @@ INSERT INTO Employee(emp_id,emp_name,age,salary,Email) VALUES (103,'Ajit Barot',
 INSERT INTO Employee(emp_id,emp_name,age,salary,Email) VALUES (104,'Hrutvik Barot',22,28000.00,'hrutvik@gmail.com');
 INSERT INTO Employee(emp_id,emp_name,age,salary,Email) VALUES (105,'Vinod Suthar',25,24000.00,'vinod@yahoo.com');
 SELECT * FROM Employee;
+UPDATE Employee set emp_name='Aatish Patel' WHERE emp_name='Atish Patel';
+SELECT * FROM Employee;
 SELECT * FROM Employee WHERE age=24;
 SELECT * FROM Employee WHERE age=22 OR age=24;
 SELECT * FROM Employee ORDER BY age;
