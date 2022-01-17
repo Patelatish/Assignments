@@ -73,6 +73,11 @@ RIGHT JOIN Users c on c.user_id=a.u_id
 SELECT c.FirstName,a.order_id from Order_details a
 LEFT JOIN Users c on c.user_id=a.u_id 
 
+SELECT Users.FirstName, Order_details.order_id
+FROM Users
+FULL OUTER JOIN Order_details ON Users.user_id=Order_details.u_id
+ORDER BY Users.FirstName;
+
 CREATE PROCEDURE SelectAllUsers
 AS
 SELECT * FROM Users
