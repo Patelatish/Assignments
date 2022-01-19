@@ -1,0 +1,269 @@
+> use myDB
+> db.createCollection('Employee')
+> show collections
+> db.Employee.Insert({
+	_id: 101,
+	name: "Aatish Patel",
+	email: "aatish.patel@aimdek.com",
+	post: "Trainee Software Engineer",
+	salary: 10000.00,
+})
+> db.Employee.find()
+> db.Employee.find().pretty()
+> db.Employee.insertMany(
+	{
+		_id: 102,
+		name: "Darpal Patel",
+		email: "darpal.patel@aimdek.com",
+		post: "Trainee Software Engineer",
+		salary: 10000.00,
+	},
+	{
+		_id: 103,
+		name: "Vishal Shah",
+		email: "vishal.shah@aimdek.com",
+		post: "Trainee Software Engineer",
+		salary: 10000.00,	
+	},
+	{
+		_id: 104,
+		name: "Nidhi Shah",
+		email: "nidhi.shah@aimdek.com",
+		post: "Project Manager",
+		salary: 30000.00,	
+	},
+	{
+		_id: 105,
+		name: "Vidhi Patel",
+		email: "vidhi.patel@aimdek.com",
+		post: "HR Manager",
+		salary: 35000.00,	
+	},
+	{
+		_id: 106,
+		name: "Kajal Shah",
+		email: "kajal.shah@aimdek.com",
+		post: "Project Manager",
+		salary: 30000.00,	
+	}
+)
+> db.Employee.find().pretty()
+{
+        "_id" : 101,
+        "name" : "Aatish Patel",
+        "email" : "aatish.patel@aimdek.com",
+        "post" : "Trainee Software Engineer",
+        "salary" : 10000
+}
+{
+        "_id" : 102,
+        "name" : "Darpal Patel",
+        "email" : "darpal.patel@aimdek.com",
+        "post" : "Trainee Software Engineer",
+        "salary" : 10000
+}
+{
+        "_id" : 103,
+        "name" : "Vishal Shah",
+        "email" : "vishal.shah@aimdek.com",
+        "post" : "Trainee Software Engineer",
+        "salary" : 10000
+}
+{
+        "_id" : 104,
+        "name" : "Nidhi Shah",
+        "email" : "nidhi.shah@aimdek.com",
+        "post" : "Project Manager",
+        "salary" : 30000
+}
+{
+        "_id" : 105,
+        "name" : "Vidhi Patel",
+        "email" : "vidhi.patel@aimdek.com",
+        "post" : "HR Manager",
+        "salary" : 35000
+}
+{
+        "_id" : 106,
+        "name" : "Kajal Shah",
+        "email" : "kajal.shah@aimdek.com",
+        "post" : "Project Manager",
+        "salary" : 30000
+}
+> db.Employee.find().forEach(function(doc) { print(doc.name + " : " + doc.post)})
+Aatish Patel : Trainee Software Engineer
+Darpal Patel : Trainee Software Engineer
+Vishal Shah : Trainee Software Engineer
+Nidhi Shah : Project Manager
+Vidhi Patel : HR Manager
+Kajal Shah : Project Manager
+> db.Employee.update({name : "Nidhi Shah"},
+	{
+		$set :{
+			name: "Nidhi Sukla",
+			email: "nidhi.sukla@aimdek.com",
+		}
+	}
+)
+> db.Employee.insert({ _id: 107, name: "Ajit Patel", email: "ajit.patel@aimdek.com", post: "Trainee Software Engineer", salary: 10000.00, })
+> db.Employee.remove({name:'Ajit Patel'})
+> db.Employee.find({post:"Trainee Software Engineer"}).pretty()
+{
+        "_id" : 101,
+        "name" : "Aatish Patel",
+        "email" : "aatish.patel@aimdek.com",
+        "post" : "Trainee Software Engineer",
+        "salary" : 10000
+}
+{
+        "_id" : 102,
+        "name" : "Darpal Patel",
+        "email" : "darpal.patel@aimdek.com",
+        "post" : "Trainee Software Engineer",
+        "salary" : 10000
+}
+{
+        "_id" : 103,
+        "name" : "Vishal Shah",
+        "email" : "vishal.shah@aimdek.com",
+        "post" : "Trainee Software Engineer",
+        "salary" : 10000
+}
+> db.Employee.createIndex({name: 'text'})
+{
+        "numIndexesBefore" : 1,
+        "numIndexesAfter" : 2,
+        "createdCollectionAutomatically" : false,
+        "ok" : 1
+}
+> db.Employee.find({$text:{$search: "\"Patel\""}}).pretty()
+{
+        "_id" : 105,
+        "name" : "Vidhi Patel",
+        "email" : "vidhi.patel@aimdek.com",
+        "post" : "HR Manager",
+        "salary" : 35000
+}
+{
+        "_id" : 102,
+        "name" : "Darpal Patel",
+        "email" : "darpal.patel@aimdek.com",
+        "post" : "Trainee Software Engineer",
+        "salary" : 10000
+}
+{
+        "_id" : 101,
+        "name" : "Aatish Patel",
+        "email" : "aatish.patel@aimdek.com",
+        "post" : "Trainee Software Engineer",
+        "salary" : 10000
+}
+> db.Employee.find({salary: {$gt:15000.00}}).pretty()
+{
+        "_id" : 104,
+        "name" : "Nidhi Sukla",
+        "email" : "nidhi.sukla@aimdek.com",
+        "post" : "Project Manager",
+        "salary" : 30000
+}
+{
+        "_id" : 105,
+        "name" : "Vidhi Patel",
+        "email" : "vidhi.patel@aimdek.com",
+        "post" : "HR Manager",
+        "salary" : 35000
+}
+{
+        "_id" : 106,
+        "name" : "Kajal Shah",
+        "email" : "kajal.shah@aimdek.com",
+        "post" : "Project Manager",
+        "salary" : 30000
+}
+> db.Employee.find({salary: {$eq:10000.00}}).pretty()
+{
+        "_id" : 101,
+        "name" : "Aatish Patel",
+        "email" : "aatish.patel@aimdek.com",
+        "post" : "Trainee Software Engineer",
+        "salary" : 10000
+}
+{
+        "_id" : 102,
+        "name" : "Darpal Patel",
+        "email" : "darpal.patel@aimdek.com",
+        "post" : "Trainee Software Engineer",
+        "salary" : 10000
+}
+{
+        "_id" : 103,
+        "name" : "Vishal Shah",
+        "email" : "vishal.shah@aimdek.com",
+        "post" : "Trainee Software Engineer",
+        "salary" : 10000
+}
+> db.Employee.find({salary: {$lte:10000.00}}).pretty()
+{
+        "_id" : 101,
+        "name" : "Aatish Patel",
+        "email" : "aatish.patel@aimdek.com",
+        "post" : "Trainee Software Engineer",
+        "salary" : 10000
+}
+{
+        "_id" : 102,
+        "name" : "Darpal Patel",
+        "email" : "darpal.patel@aimdek.com",
+        "post" : "Trainee Software Engineer",
+        "salary" : 10000
+}
+{
+        "_id" : 103,
+        "name" : "Vishal Shah",
+        "email" : "vishal.shah@aimdek.com",
+        "post" : "Trainee Software Engineer",
+        "salary" : 10000
+}
+> db.Employee.find({salary: {$gte:10000.00}}).pretty()
+{
+        "_id" : 101,
+        "name" : "Aatish Patel",
+        "email" : "aatish.patel@aimdek.com",
+        "post" : "Trainee Software Engineer",
+        "salary" : 10000
+}
+{
+        "_id" : 102,
+        "name" : "Darpal Patel",
+        "email" : "darpal.patel@aimdek.com",
+        "post" : "Trainee Software Engineer",
+        "salary" : 10000
+}
+{
+        "_id" : 103,
+        "name" : "Vishal Shah",
+        "email" : "vishal.shah@aimdek.com",
+        "post" : "Trainee Software Engineer",
+        "salary" : 10000
+}
+{
+        "_id" : 104,
+        "name" : "Nidhi Sukla",
+        "email" : "nidhi.sukla@aimdek.com",
+        "post" : "Project Manager",
+        "salary" : 30000
+}
+{
+        "_id" : 105,
+        "name" : "Vidhi Patel",
+        "email" : "vidhi.patel@aimdek.com",
+        "post" : "HR Manager",
+        "salary" : 35000
+}
+{
+        "_id" : 106,
+        "name" : "Kajal Shah",
+        "email" : "kajal.shah@aimdek.com",
+        "post" : "Project Manager",
+        "salary" : 30000
+}
