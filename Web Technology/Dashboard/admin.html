@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dashboard</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>   
+    <!--side navbar-->
+    <div class="wrapper">
+      <nav id="sidebar">
+        <div class="sidebar-header">
+          <h3>Dashboard</h3><hr>
+        </div>
+        <ul class="list-unstyled components">
+          <p>MENUS</p>
+          <li><a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">User<span class="caret"></span></a>
+            <ul class="collapse list-unstyled" id="pageSubmenu">
+              <li><a href="#">My Profile</a></li>
+              <li><a href="#">My Balance</a></li>
+              <li><a href="#">Account Setting</a></li>
+              <li><a href="#">Logout</a></li>
+            </ul>
+          </li><hr>
+          <li><a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Inbox<span class="caret"></span></a>
+            <ul class="collapse list-unstyled" id="pageSubmenu2">
+              <li><a href="#">Mailbox</a></li>
+              <li><a href="#">Mailbox Details</a></li>
+              <li><a href="#">Compose Mail</a></li>
+            </ul>
+          </li><hr>
+          <li><a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Property<span class="caret"></span></a>
+            <ul class="collapse list-unstyled" id="pageSubmenu3">
+              <li><a href="">Property List</a></li>
+              <li><a href="">Property Detail</a></li>
+              <li><a href="">Add Property</a></li>
+            </ul>
+          </li>
+              <hr>
+              <li><a href="customer.html">Customers</a></li><hr>
+              <li><a href="analytics.html">Analytics</a></li><hr>
+          <li><a href="#pageSubmenu4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Apps<span class="caret"></span></a>
+            <ul class="collapse list-unstyled" id="pageSubmenu4">
+              <li><a href="#">Calendar</a></li>
+              <li><a href="#">Chat App</a></li>
+            </ul>
+          </li><hr>
+          <li><a href="#pageSubmenu5" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Others<span class="caret"></span></a>
+            <ul class="collapse list-unstyled" id="pageSubmenu5">
+              <li><a href="#">Subscribers</a></li>
+              <li><a href="#">Timeline</a></li>
+              <li><a href="#">Live Chat</a></li>
+              <li><a href="#">Likes</a></li>
+              <li><a href="#">Comments</a></li>
+            </ul>
+          </li><hr>
+          <li><a href="">Logout</a></li>
+        </ul>
+      </nav>
+      <div class="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light"><button type="button" id="sidebarCollapse" class="btn btn-info"><i class="glyphicon glyphicon-th-list"></i></button>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggle-icon "></span>
+          </button> 
+           <ul class="nav navbar-nav navbar-right">
+          <li>
+            <form class="navbar-form navbar-left" action="#">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search">
+                <div class="input-group-btn">
+                  <button class="btn btn-default" type="submit">
+                    <i class="glyphicon glyphicon-search"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </li>
+          <li class="active"><a href="admin.html">Home</a></li>
+          <li><a href="#">Messages</a></li>
+          <li><a href="#">Notification</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">User
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">My Profile</a></li>
+                <li><a href="#">Account Setting</a></li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+          </li>
+        </ul>         
+        </nav>
+        <div class="content-wrapper">
+            <h2>Dashboard</h2>
+            <div class="line">
+            </div>
+            <div class="row">
+              <div class="column">
+                  <h5>All Properties</h5>
+                  <h5>500</h5>
+              </div>
+              <div class="column">
+                  <h5>Properties For Sale</h5>
+                  <h5>200</h5>
+              </div>
+              <div class="column">
+                  <h5>Properties For Rent</h5>
+                  <h5>300</h5>
+              </div>
+              <div class="column">
+                  <h5>Total Ernings</h5>
+                  <h5>$8001</h5>
+              </div>
+          </div>
+
+          <div class="row">
+            <div class="column2">
+              <h5>Property Sales Income</h5>
+              <h5>$50000</h5>
+              <p>April 2019 <b>100 Sales</b></p>
+          </div>
+          <div class="column2">
+              <h5>Property On Rent Income</h5>
+              <h5>$30000</h5>
+              <p>April 2019 <b>110 Sales</b></p>
+          </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+</html> 

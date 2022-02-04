@@ -1,0 +1,133 @@
+*{
+    font-size : 16px;
+}
+body{
+    background-color: white;
+}
+.nav_menu{
+    background-color: skyblue;
+    overflow: hidden;
+}
+.nav_menu a{
+    float: left;
+    color: darkblue;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+.right_align{
+    float: right;
+}
+.nav_menu a:hover{
+    background-color: blue;
+    color: white;
+}
+.dropdown{
+    float: left;
+    overflow: hidden;
+}
+.dropdown .dropdown_btn{
+    font-size: 16px;
+    border: none;
+    outline:none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+}
+.dropdown_item{
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    padding: 12px 16px;
+    z-index: 1;
+}
+.dropdown_item a{
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown:hover .dropdown_item{
+    display: block;
+}
+
+.heading{
+    background-color: aqua;
+    font-size: 30px;
+}
+
+aside{
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: skyblue;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+aside a{
+    display: block;
+    color: darkblue;
+    padding: 16px;
+    text-decoration: none;
+}
+aside a:hover{
+    color: white;
+    background-color: blue;
+}
+div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+}
+.column{
+    float: left;
+    width: 23%;
+    background-color: lemonchiffon;
+    text-align: center;
+    margin:1%;
+}
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+@media screen and (max-width: 600px){
+    .column , .column2{
+        width: 100%;
+    }
+}
+
+.column2{
+    float:left;
+    width:48%;
+    background-color: lemonchiffon;
+    margin: 1%;
+    text-align: center;
+}
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.tbl{
+    width: 100%;
+    background-color: lightcyan;
+    margin-top: 10px;
+}
+.tbl th{
+    color: black;
+    font-size: 25px;
+    padding: 10px;
+}
+.tbl tr{
+    text-align: center;
+    color: darkblue;
+}
+.tbl tr td{
+    padding: 10px;
+}
