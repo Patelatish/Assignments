@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Aatish Patel",
+    "password": "aatish123",
+    "gender": "male",
+    "birthdate": "18/10/1997",
+    "age": 24,
+    "country": "india",
+    "phone": "+911234567890"
+  },
+  {
+    "id": 2,
+    "name": "Rutvik Patel",
+    "password": "rutvik123",
+    "gender": "male",
+    "birthdate": "18/09/1997",
+    "age": 24,
+    "country": "india",
+    "phone": "+911234567890"
+  },
+  {
+    "id": 3,
+    "name": "Kabir",
+    "password": "kabir123",
+    "gender": "male",
+    "birthdate": "18/09/1997",
+    "age": 24,
+    "country": "india",
+    "phone": "+911234567890"
+  },
+  {
+    "id": 4,
+    "name": "xyz Patel",
+    "password": "aatish123",
+    "gender": "male",
+    "birthdate": "18/10/1997",
+    "age": 24,
+    "country": "india",
+    "phone": "+911234567890"
+  }
+]
