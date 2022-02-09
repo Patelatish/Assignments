@@ -1,0 +1,117 @@
+Monk and Rotation
+-------------------------------------------------------
+import java.util.*; 
+class TestClass {
+    public static void printArray(int start,int end,int A[]){
+            for(int i=start;i<end;i++){
+                System.out.print(A[i]+" ");
+            }
+    }
+    public static void main(String args[] ) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        while(T!=0){
+            int N = sc.nextInt();
+            int K = sc.nextInt();
+            int A[] = new int[N];  
+            for(int i=0;i<N;i++){
+                A[i] = sc.nextInt();
+            }
+            printArray((N - (K%N)),N,A);
+            printArray(0,(N - (K%N)),A);
+            System.out.println();
+            T-=1;
+        }
+    }
+}
+=======================================================
+
+Monk and Inversions
+---------------------------------------------------------
+import java.util.*; 
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        while(T!=0){
+            int N = sc.nextInt();
+            int M[][] = new int[N][N];
+            for(int i=0;i<N;i++){
+                for(int j=0;j<N;j++){
+                    M[i][j]=sc.nextInt();
+                }
+            }
+            int ans = 0;
+            int temp = 0;
+            for(int i=0;i<N;i++){
+                for(int j=0;j<N;j++){
+                    temp = M[i][j];
+                    int a=i;
+                    int b=j;
+                    for(int x=0;x<N;x++){
+                        for(int y=0;y<N;y++){
+                            if(a <= x && b <= y){
+                                if(temp > M[x][y]){
+                                    ans++;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            System.out.println(ans);
+            T -= 1;
+        }   
+    }
+}
+=========================================================
+
+Cyclic shift
+---------------------------------------------------------
+T = int(input())
+while T!=0:
+    n,k = map(int, input().split())
+    s = input()
+    max = ""
+    p = -1;
+    for i in range(n):
+        if max < s:
+            max = s
+            d = i
+        elif max == s:
+            p = i-d
+            break
+        s = s[1:]+s[:1]
+    if p == -1:
+        print(d + (k-1)*n)
+    else:
+        print(d + (k-1)*p)
+    T-=1
+==============================================================
+
+Minimum AND xor OR
+--------------------------------------------------------------
+import java.util.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        while(T != 0){
+            int N = sc.nextInt();
+            int A[] = new int[N];
+            for(int i=0;i<N;i++){
+                A[i] = sc.nextInt();
+            }
+           Arrays.sort(A);
+           int min = A[0] ^ A[1];
+           for(int i=1;i<N-1;i++){
+               int temp = A[i] ^ A[i+1];
+               if(temp < min){
+                   min = temp;
+               }
+           } 
+           System.out.println(min);
+            T -= 1;
+        }
+    }
+}

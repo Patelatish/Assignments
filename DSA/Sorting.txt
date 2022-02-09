@@ -1,0 +1,90 @@
+Monk and Nice Strings
+--------------------------------------------------------------------------
+arr = []
+n = int(input())
+for _ in range(n):
+    arr.append(input())
+for i in range(n):
+    count = 0
+    for j in range(0,i,+1):
+        if arr[j] < arr[i]:
+            count += 1
+    print(count)
+=========================================================================
+
+Monk and Suffix Sort
+-------------------------------------------------------------------------
+line = input().split()
+s = line[0]
+k = int(line[1])
+n = len(s)
+arr = []
+for i in range(n):
+    arr.append(s[i:])
+arr.sort()
+print(arr[k-1])
+===========================================================================
+
+Monk being monitor
+---------------------------------------------------------------------------
+import java.util.*;
+import java.lang.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        while(T!=0){
+            int N = sc.nextInt();
+            int A[] = new int[N];
+            for(int i=0;i<N;i++){
+                A[i] = sc.nextInt();
+            }
+            Arrays.sort(A);
+            int res = 0;
+            int min = -1;
+            int current_fre = 0;
+            for(int i=0;i<N;i++){
+                if(i!=N-1 && A[i]==A[i+1]){
+                    current_fre += 1;
+                }
+                else{
+                    current_fre += 1;
+                    if(min == -1){
+                        min = current_fre;
+                    }
+                    else{
+                        if(min>current_fre){
+                            min = current_fre;
+                        }
+                        else{
+                            res = Math.max(res,current_fre-min);
+                        }
+                        current_fre = 0;
+                    }
+                }
+            }
+            if(res>0){
+                System.out.println(res);
+            }
+            else{
+                System.out.println(-1);
+            }
+            T -= 1;
+        }
+    }
+}
+=================================================================================
+
+Monk and Sorting Algorithm
+---------------------------------------------------------------------------------
+num = int(input())
+A = list(map(int,input().strip().split()))
+maxA = max(A)
+mul = 1
+rem = 10 ** 5
+while maxA:
+    A.sort(key = lambda x: (x/mul)%rem)
+    print(' '.join(map(str,A)))
+    mul *= rem
+    maxA //= rem
+================================================================================
