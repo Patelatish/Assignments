@@ -1,0 +1,20 @@
+.cart-container{
+    background-color:aliceblue;
+    width:68%;
+    margin-top: 2%; 
+}
+
+.bill-container{
+    background-color: lightgrey;
+    border: 1px dotted black;
+    height: 500px;
+    width:30%;
+    margin-left: 2%;
+    margin-top: 2%; 
+}
+.heading{
+    color: black;
+    text-align: center;
+    margin-top: 2%;
+    background-color: aliceblue;
+}

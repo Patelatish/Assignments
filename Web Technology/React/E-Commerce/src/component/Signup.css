@@ -1,0 +1,10 @@
+.signup-form{
+    background-color: whitesmoke;
+    padding-top: 5%;
+    padding-left:15%;
+    padding-right: 15%;
+    padding-bottom: 5%;
+    margin-top: 30px;
+    border-radius: 50px; 
+    box-shadow: 2px 2px 4px;  
+}
