@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row" style="margin-top: 2%;">
+        <div class="col-sm-2">
+        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" (change)="filter($event)">
+            <option value="" selected>All</option>
+            <option value="electronics">Electronics</option>
+            <option value="fashion">Fashion</option>
+            <option value="grocery">Grocery</option>
+          </select>          
+        </div>
+    </div>
+    <div class="row"> 
+        <div class="col col-sm-3" *ngFor="let product of dataByCategory">
+            <!-- <h1>{{product.id}}</h1> -->
+            <div class="card">
+                <img src={{product.details.image}} class="card-img-top cardImg" alt="Loading...!!">
+                <div class="card-body">
+                <h5 class="card-title">{{product.details.name}}</h5>
+                <p class="card-text">₹ {{product.details.price}}</p>
+                <button class="btn btn-primary" [routerLink]="['/product',product.id]" style="width:100%">View Details</button>
+                <button class="btn btn-primary" (click)="addToCart(product)" style="width:100%;margin-top: 2%;">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<p style="text-align: center;"></p>
+
+

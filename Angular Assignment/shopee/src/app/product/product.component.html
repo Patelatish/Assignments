@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+
+<!-- Id is {{id}}.<br>
+Product name : {{product.details.name}}<br>
+<img src={{product.details.image}}/> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <img src={{product.details.image}} class="productImage"/>
+        </div>
+        <div class="col myCol">
+            <h3>{{product.details.name}}</h3><br>
+            <h3>₹ {{product.details.price}}</h3><br>
+            <p>{{product.details.description}}</p>
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-primary myBtn" (click)="addToCart(product)" style="width:100%;margin-top: 2%;">Add to Cart</button>
+                </div>
+                <div class="col">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+.logo{
+    text-shadow: 2px 4px 6px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+    text-align: center;
+}
+
+.container{
+    margin-top: 5%;
+}

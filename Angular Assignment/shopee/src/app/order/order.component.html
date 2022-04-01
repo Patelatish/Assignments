@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+<ng-container *ngIf="productList.length == 0">
+    <div class="container">
+        <div class="emptyCart">
+            <h2>Opss...!! You have not make any order till now...!!</h2>
+            <p>Purchase Something from here.</p>
+            <button class="btn btn-primary" routerLink="/">Buy Product</button>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="productList.length != 0">
+    <div class="container">
+        <h3>Orders</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col" colspan="2">Product Details</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let product of productList">
+                <tr *ngFor="let item of product">
+                    <td><img src={{item.details.image}} class="myImg" alt="Loading...!!" /></td>
+                    <td><p>{{item.details.name}}</p></td>
+                    <td>₹{{item.details.price}}</td>
+                    <td>{{item.qty}}</td>
+                    <td>₹{{item.total}}</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</ng-container>

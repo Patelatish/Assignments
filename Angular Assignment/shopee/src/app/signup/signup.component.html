@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="card text-center">
+    <div class="card-header">
+      <a routerLink="/">
+        <h1 class="logo">Shopee</h1>
+      </a>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Sign Up</h5>
+      <form>
+        <div class="mb-3">
+          <input type="email" class="form-control" name="email" [(ngModel)]="email" id="exampleInputEmail1"
+            placeholder="Enter Email">
+        </div>
+        <div class="mb-3">
+          <input type="password" class="form-control" name="password" [(ngModel)]="password" id="exampleInputPassword1"
+            placeholder="Enter Password">
+        </div>
+        <!-- <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div> -->
+        <button type="button" (click)="signup()" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <div class="card-footer text-muted">
+      <p>Already Have an Account ? <a routerLink="/signin">Sign In</a></p>
+    </div>
+  </div>
+</div>

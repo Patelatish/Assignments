@@ -1,0 +1,14 @@
+.productImage{
+    width: 95%;
+    height: 80%;
+}
+
+.productImage:hover{
+    transform: scale(1.2);
+}
+.row{
+    margin-top: 5%;
+}
+.myCol{
+    margin-left: 2%;
+}
