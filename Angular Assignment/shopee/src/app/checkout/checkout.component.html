@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <h2>Checkout Process</h2>
+            <form>
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="firstName" [(ngModel)]="firstName" id="firstName" placeholder="Enter First Name" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="lastName" [(ngModel)]="lastName" id="lastName" placeholder="Enter Last Name"
+                        required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="phoneNo" [(ngModel)]="phoneNo" id="phoneNo" placeholder="Enter Phone Number"
+                        required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="state" [(ngModel)]="state" id="state" placeholder="Enter State" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="city" [(ngModel)]="city" id="city" placeholder="Enter City" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="pincode" [(ngModel)]="pincode" id="pincode" placeholder="Enter Pincode"
+                        required>
+                </div>
+            </form>
+        </div>
+        <div class="col-4">
+            <h2>Product Details</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col" colspan="2">Products</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products">
+                        <td colspan="2">
+                            <p>{{product.details.name}}</p>
+                        </td>
+                        <td>{{product.qty}}</td>
+                        <td>₹{{product.details.price}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="tFoot">
+                            <h4>Total : ₹{{amount}}</h4>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr class="tFoot">
+                        <td colspan="6">
+                            <button class="btn btn-primary" (click)="placeOrder()">Place Order</button>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>

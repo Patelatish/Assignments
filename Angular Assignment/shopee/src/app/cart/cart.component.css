@@ -1,0 +1,19 @@
+.myImg{
+    width:150px;
+    height: 150px;
+}
+.qtyBtn{
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+}
+.tFoot{
+    text-align: right;
+}
+.container{
+    margin-top: 2%;
+}
+.emptyCart{
+    text-align: center;
+    margin-top: 10%;
+}

@@ -1,0 +1,52 @@
+<app-navbar></app-navbar>
+<ng-container *ngIf="products.length == 0">
+  <div class="container"> 
+    <div class="emptyCart">
+      <h2>Opss...!! Your Cart is Empty...!!</h2>
+      <p>Add Something to your cart from here.</p>
+        <button class="btn btn-primary" routerLink = "/">Add Product</button>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="products.length != 0">
+  <div class="container">
+    <div class="row">
+        <div class="col-8">
+          <h3>User Cart</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col" colspan="2">Product Details</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let product of products">
+                <td><img src={{product.details.image}} class="myImg" alt="Loading...!!"/></td>
+                <td><p>{{product.details.name}}</p></td>
+                <td>₹{{product.details.price}}</td>
+                <td><button (click)="onQtyDecrease(product.id)" class="qtyBtn" *ngIf="product.qty > 1">-</button>{{product.qty}}<button (click)="onQtyIncrease(product.id)" class="qtyBtn">+</button></td>
+                <td>₹{{product.total}}</td>
+                <td><button class="btn btn-danger" (click)="removeItem(product)">Remove</button></td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr class="tFoot">
+                <td colspan="6">
+                  <button class="btn btn-danger" (click)="clearCart()">Empty Cart</button>  
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <div class="col-4">
+          <h2>Total : ₹{{amount}}</h2>
+          <button routerLink="/checkout" class="btn btn-primary">Checkout</button>
+          <!-- <button routerLink="/signin" *ngIf="!user" class="btn btn-primary">Signin to buy</button> -->
+        </div>
+      </div>
+  </div>  
+</ng-container>
