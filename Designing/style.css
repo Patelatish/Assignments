@@ -1,0 +1,202 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+	margin:0;
+	padding:0;
+}
+.container{
+    background-color: white;
+    width: 100%;
+}
+header{
+    background-image: url('images/banner.jpg');
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-size: 100% 150%;
+    height: 500px;
+}
+.navbar{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+.navbar ul li{
+    list-style-type: none;
+    padding: 14px 16px;
+    display: inline;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+.header-text{
+    color: white;
+    margin-left: 58%;
+    width: 36%;
+}
+.header-text h2{
+    font-size: 40px;
+}
+.header-text p{
+    font-size: 20px;
+}
+
+.btn{
+    color: white;
+    background-color: rgb(61, 61, 129);
+    width: max-content;
+    height: fit-content;
+    font-size: 15px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: none;
+    box-shadow: 0px 1px 1px white;
+}
+
+.row{
+    width:100%;
+    display: flex;
+}
+.about-left{
+    width:50%;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+.about-right{
+    width:30%;
+    margin-top: 7%;
+    margin-left: 10%;
+}
+.about-text{
+    background-image: url('images/helicopter.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.about-text h2{
+    font-size: 30px;
+}
+.about-text p{
+    font-size: 18px;
+    color: rgb(32, 31, 31);
+}
+.about-text a{
+    font-size: 18px;
+    color: blue;
+}
+
+.row::after{
+    display: block;
+    content: '';
+    clear: both;
+}
+.sub-header{
+    background-color: rgb(212, 234, 241);
+    width:max-content;
+    height: min-content;
+}
+.sub-header-content{
+    color: rgb(35, 35, 41);
+    padding: 15px;
+}
+.services-content{
+    background-color: rgb(226, 227, 228);
+    padding:5%;
+    margin-top: 5%;
+}
+.services-content h2{
+    font-size: 30px;
+}
+.col-25{
+    width:25%;
+    text-align: center;
+    padding-right: 1%;
+    padding-left: 1%;
+}
+.col-25 h3{
+	color:darkblue;
+}
+.col-25 p{
+	color:grey;
+}
+.services-image{
+    width: 260px;
+    height: 290px;
+}
+
+.gallery-container{
+    padding:5%;
+    margin-top: 5%;
+}
+
+.col-3{
+    width:31%;
+}
+.gallery-image{
+    width:350px;
+    height: 250px;
+	margin-left:15%;
+	padding:2%;
+}
+.contact-container{
+	display:flex;
+	/* justify-content:center; */
+}
+.contact-container-2{
+	width:70%;
+    background-color: rgb(226, 227, 228);
+	padding:3%;
+	margin-left:12%;
+	/* background-image: url('images/helicopter.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%; */
+}
+.col-30{
+    width:40%;
+}
+.col-60{
+	margin-top:1%;
+    width:65%;
+}
+.input-text{
+	width:44%;
+	height:35px;
+	margin:2%;
+	border:1px solid skyblue;
+}
+textarea{
+	margin:2%;
+	width:94%;
+	height:100px;
+	border:1px solid skyblue;
+}
+.btn-send{
+	margin:2%;
+}
+.footer{
+	margin-top:-13%;
+	padding-top:15%;
+	padding-bottom:1%;
+    color: white;
+    background-color: rgb(61, 61, 129);
+	text-align:center;
+}
+.footer-link a{
+	text-decoration: none;
+    color: white;
+}
+@media only screen and (max-width: 767px){
+	.row{
+		display:inline-block;
+	}
+	.col{
+		width:100%;
+	}
+	.services-content{
+		display:inline-block;
+	}
+}
